@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>yukroe</title>
+<meta name="description" content="yukroe: 3D modeller for Roblox. Game-ready weapons, UGC accessories and PBR texturing. Also scripts game systems in Luau.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -22,7 +23,7 @@
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-main{max-width:680px;margin:0 auto;padding-block:64px 80px;display:grid;gap:56px}
+main{max-width:760px;margin:0 auto;padding-block:64px 80px;display:grid;gap:56px}
 h1,h2,h3{margin:0;line-height:1.25;text-wrap:balance}
 h1{font-family:var(--mono);font-weight:600;font-size:28px}
 h2{font-family:var(--mono);font-weight:500;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-bottom:8px;border-bottom:1px solid var(--line)}
@@ -45,7 +46,15 @@ section{display:grid;gap:20px}
 dl{margin:0;display:grid;grid-template-columns:9rem 1fr;gap:8px 16px}
 dt{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:2px}
 dd{margin:0;min-width:0}
-@media (max-width:480px){dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}}
+.work{display:grid;gap:12px}
+.work + .work{margin-top:24px}
+.meta{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.gallery a{display:block;background:#000;border-radius:4px;overflow:hidden;line-height:0}
+.gallery a.wide{grid-column:1/-1}
+.gallery img{width:100%;height:auto;display:block;transition:opacity .15s}
+.gallery a:hover img{opacity:.85}
+@media (max-width:480px){dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}.gallery{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -54,7 +63,7 @@ dd{margin:0;min-width:0}
 
 <header class="intro">
   <h1>yukroe</h1>
-  <p>Roblox scripter. I code game systems in Luau, and if your game needs something that isn't listed here, I can most likely build it.</p>
+  <p>3D modeller for Roblox. I make game-ready weapons and UGC accessories in Blender, textured with full PBR maps and exported ready for Studio. I also script, so I can hook what I model straight into your game.</p>
   <div class="links">
     <a href="https://www.roblox.com/users/139890187/profile" target="_blank" rel="noopener">roblox.com/users/139890187</a>
     <span>discord: <button class="copy" id="discord" type="button">@r48</button> <span class="note" id="copied" hidden>copied</span></span>
@@ -62,51 +71,69 @@ dd{margin:0;min-width:0}
 </header>
 
 <section>
-  <h2>Systems I build</h2>
+  <h2>Featured work</h2>
+
+  <div class="work">
+    <h3>Colossal greatsword</h3>
+    <p>A two-handed greatsword built for a game. Satin steel blade with silver-inlaid runes and battle chips cut into the edge, a blackened iron guard with gold inlay and horns, and a leather and twisted-wire grip modelled in full 3D rather than painted on.</p>
+    <p class="meta">44,288 tris across 4 meshes · split blade texture for extra sharpness · 1024 PBR maps</p>
+    <div class="gallery">
+      <a href="greatsword-upright.jpg" target="_blank" rel="noopener"><img src="greatsword-upright.jpg" width="1067" height="1600" alt="Greatsword standing point-down in a spotlight" loading="lazy"></a>
+      <a href="greatsword-hilt.jpg" target="_blank" rel="noopener"><img src="greatsword-hilt.jpg" width="1067" height="1600" alt="Greatsword hilt: pommel, wire and leather grip, inlaid guard" loading="lazy"></a>
+      <a class="wide" href="greatsword-lying.jpg" target="_blank" rel="noopener"><img src="greatsword-lying.jpg" width="1600" height="900" alt="Greatsword lying on slate under a spotlight" loading="lazy"></a>
+      <a href="greatsword-guard.jpg" target="_blank" rel="noopener"><img src="greatsword-guard.jpg" width="1600" height="900" alt="Close-up of the guard, horns and gold inlay" loading="lazy"></a>
+      <a href="greatsword-grip.jpg" target="_blank" rel="noopener"><img src="greatsword-grip.jpg" width="1600" height="900" alt="Modelled leather and wire grip with engraved bronze collar" loading="lazy"></a>
+      <a class="wide" href="greatsword-low-angle.jpg" target="_blank" rel="noopener"><img src="greatsword-low-angle.jpg" width="1600" height="900" alt="Low angle looking up the greatsword blade" loading="lazy"></a>
+    </div>
+  </div>
+
+  <div class="work">
+    <h3>Katana</h3>
+    <p>Modelled 1:1 from a reference photo of a bare blade, with the handle and fittings designed from scratch. Hamon temper line and forged grain on the blade, a hammered iron tsuba with gold and silver inlay, and a silk-wrapped handle over ray-skin with gold chrysanthemum menuki.</p>
+    <p class="meta">3,948 tris · UGC-ready (under 4k) · 1024 PBR maps</p>
+    <div class="gallery">
+      <a class="wide" href="katana-full.jpg" target="_blank" rel="noopener"><img src="katana-full.jpg" width="1600" height="686" alt="Full katana" loading="lazy"></a>
+      <a href="katana-tsuba.jpg" target="_blank" rel="noopener"><img src="katana-tsuba.jpg" width="1600" height="900" alt="Tsuba with gold moon, geese and wave inlay" loading="lazy"></a>
+      <a href="katana-tip.jpg" target="_blank" rel="noopener"><img src="katana-tip.jpg" width="1600" height="900" alt="Blade tip showing the hamon" loading="lazy"></a>
+      <a href="katana-handle.jpg" target="_blank" rel="noopener"><img src="katana-handle.jpg" width="1600" height="900" alt="Handle wrap and guard" loading="lazy"></a>
+      <a href="katana-hamon.jpg" target="_blank" rel="noopener"><img src="katana-hamon.jpg" width="1600" height="900" alt="Hamon and forged grain close-up" loading="lazy"></a>
+      <a class="wide" href="katana-kashira.jpg" target="_blank" rel="noopener"><img src="katana-kashira.jpg" width="1600" height="900" alt="Kashira end cap with silk wrap" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What I model</h2>
   <div class="list">
     <div class="sys">
-      <h3>Admin &amp; moderation</h3>
+      <h3>Weapons</h3>
       <ul>
-        <li>Staff panels with kick, ban, timed ban and warn</li>
-        <li>Bans saved with DataStores so they stick across servers</li>
-        <li>Rank and permission levels so mods only see what they should</li>
-        <li>Action logs</li>
+        <li>Swords, greatswords, katanas and other melee weapons</li>
+        <li>Detail modelled where it shows: chips, inlay, wraps, bevels</li>
+        <li>Split into sensible parts (blade, fittings, grip) for easy re-texturing</li>
       </ul>
     </div>
     <div class="sys">
-      <h3>Shops &amp; economy</h3>
+      <h3>UGC accessories</h3>
       <ul>
-        <li>In-game currency with saving and leaderstats</li>
-        <li>Shops and inventories with purchases checked on the server</li>
-        <li>Gamepasses and developer products through <code>ProcessReceipt</code></li>
+        <li>Hats, bags, necklaces and other avatar items</li>
+        <li>Kept under the 4,000 triangle limit with a single 1024 texture set</li>
+        <li>Recolours and variants of existing items</li>
       </ul>
     </div>
     <div class="sys">
-      <h3>Combat &amp; weapons</h3>
+      <h3>Texturing</h3>
       <ul>
-        <li>Melee and sword systems with hitboxes validated on the server</li>
-        <li>Block, parry, stuns, cooldowns and guard meters</li>
-        <li>Hit effects and damage numbers</li>
+        <li>Full PBR sets: color, normal, metalness and roughness</li>
+        <li>Realistic materials: forged steel, leather, silk, bronze, gold inlay</li>
+        <li>Ready to drop into a SurfaceAppearance</li>
       </ul>
     </div>
     <div class="sys">
-      <h3>Movement</h3>
+      <h3>Renders &amp; GFX</h3>
       <ul>
-        <li>Dashes, double jumps, sprint and stamina</li>
-        <li>Custom animations hooked up to each move</li>
-      </ul>
-    </div>
-    <div class="sys">
-      <h3>UI</h3>
-      <ul>
-        <li>Menus, HUDs, shop and inventory screens, all scripted</li>
-        <li>Tweens and responsive layouts that work on mobile</li>
-      </ul>
-    </div>
-    <div class="sys">
-      <h3>Anything else</h3>
-      <ul>
-        <li>Tell me what your game needs and I'll build it to fit</li>
+        <li>Studio product shots of your item for thumbnails and showcases</li>
+        <li>Scene GFX for games and groups</li>
       </ul>
     </div>
   </div>
@@ -115,25 +142,41 @@ dd{margin:0;min-width:0}
 <section>
   <h2>How I work</h2>
   <ul class="plain">
+    <li>Triangle budget agreed up front: under 4k for UGC, up to 20k per mesh for game assets.</li>
+    <li>Clean topology, and wireframe screenshots available on request before you pay.</li>
+    <li>Exported as FBX at Roblox scale, so it imports at the right size with no fixing.</li>
+    <li>Close-up renders checked at every stage, and revisions until it looks right.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Scripting</h2>
+  <p>I also code game systems in Luau. If your game needs something that isn't listed here, I can most likely build it.</p>
+  <dl>
+    <dt>Combat</dt><dd>Melee and sword systems with server-validated hitboxes, block, parry, stuns, cooldowns, hit effects</dd>
+    <dt>Movement</dt><dd>Dashes, double jumps, sprint and stamina, with custom animations</dd>
+    <dt>Economy</dt><dd>Currency with saving, shops and inventories, gamepasses and dev products through <code>ProcessReceipt</code></dd>
+    <dt>Admin</dt><dd>Staff panels with kick, ban, timed ban and warn, DataStore bans, ranks and action logs</dd>
+    <dt>UI</dt><dd>Menus, HUDs, shop and inventory screens, tweened and mobile-friendly</dd>
+  </dl>
+  <ul class="plain">
     <li>The server makes the decisions. Remotes are sanity-checked so exploiters can't fire them for free.</li>
-    <li>Code is split into modules with settings at the top, so you can change values without digging through it.</li>
-    <li>Everything is tested in Studio with multiple players before it's handed over.</li>
+    <li>Code is split into modules with settings at the top, and tested in Studio with multiple players.</li>
   </ul>
 </section>
 
 <section>
   <h2>Other skills</h2>
   <dl>
-    <dt>Games</dt><dd>Made several of my own, including sword fighting games</dd>
-    <dt>Building</dt><dd>Maps for my games</dd>
     <dt>Animation</dt><dd>R6 animations in Blender, imported into Studio</dd>
-    <dt>Modelling</dt><dd>Low-poly weapons and UGC accessories</dd>
+    <dt>Building</dt><dd>Maps for my own games</dd>
+    <dt>Games</dt><dd>Made several of my own, including sword fighting games</dd>
   </dl>
 </section>
 
 <section>
   <h2>Contact</h2>
-  <p>Message me on Discord at <b>@r48</b> or through my <a href="https://www.roblox.com/users/139890187/profile" target="_blank" rel="noopener">Roblox profile</a>. Commissions are open.</p>
+  <p>Message me on Discord at <b>@r48</b> or through my <a href="https://www.roblox.com/users/139890187/profile" target="_blank" rel="noopener">Roblox profile</a>. Commissions are open for models and scripting.</p>
 </section>
 
 </main>
